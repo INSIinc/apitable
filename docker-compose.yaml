@@ -188,7 +188,17 @@ services:
       retries: 60
     networks:
       - apitable
-
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_ARBITRARY=1
+    networks:
+      - apitable
+    depends_on:
+      - mysql
   rabbitmq:
     container_name: rabbitmq
     image: ${IMAGE_RABBITMQ}
