@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { Button } from 'antd';
 import { getEnvVariables } from 'pc/utils/env';
 import { Block } from '../components';
 import { ILayoutProps } from '../interface';
@@ -42,6 +43,9 @@ export const Lg = (props: ILayoutProps) => {
 
   return (
     <div className={styles.lg} style={{ height: '100%' }}>
+      <Button onClick={()=>{
+        console.log(props);
+      }}>123</Button>
       <Block isWrap vertical style={{ maxWidth: '25%' }}>
         <Block flex={43}>
           <InfoCard minHeight={494} />

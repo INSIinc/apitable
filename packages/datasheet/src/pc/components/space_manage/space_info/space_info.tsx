@@ -19,7 +19,7 @@
 import { useMount } from 'ahooks';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { shallowEqual } from 'react-redux';
-import { useContextMenu } from '@apitable/components';
+import { Button, useContextMenu } from '@apitable/components';
 import { Events, IReduxState, Player, ScreenWidth, StoreActions, Strings, t } from '@apitable/core';
 import { Modal } from 'pc/components/common';
 import { ScreenSize } from 'pc/components/common/component_display/enum';
@@ -168,6 +168,9 @@ export const SpaceInfo = () => {
   return (
     // <SpaceContext.Provider value={contextValue}>
     <ScrollBar style={{ width: '100%', height: '100%' }}>
+      <Button onClick={()=>{
+        console.log(subscription);
+      }}>SpaceInfo</Button>
       <Layout {...layoutProps} />
       {isDelConfirmModal && (
         <DelConfirmModal setIsDelSpaceModal={setIsDelSpaceModal} setIsDelConfirmModal={setIsDelConfirmModal} isMobile={isMobile} />

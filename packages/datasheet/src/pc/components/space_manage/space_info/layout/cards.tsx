@@ -16,6 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import { useMemo } from 'react';
+import { Button } from '@apitable/components';
 import { Strings, t } from '@apitable/core';
 import { CreditCostCard } from 'pc/components/space_manage/space_info/components/credit_cost_card/credit_cost_card';
 import { useAutomation } from 'pc/components/space_manage/space_info/hooks/use_automation';
@@ -90,18 +91,23 @@ export const useCards = (props: ILayoutProps) => {
         <Info {...props} {...infoProps} isMobile={isMobile} certified={basicCert} isSocialEnabled={isSocialEnabled} spaceId={spaceId} />
       ),
       MemberCard: (props: ICardProps) => (
-        <Card
-          {...props}
-          {...memberData}
-          isMobile={isMobile}
-          level={level}
-          shape="line"
-          unit={t(Strings.people)}
-          trailColor={trailColor}
-          strokeColor={strokeColor}
-          title={t(Strings.current_count_of_person)}
-          titleTip={t(Strings.member_data_desc_of_member_number)}
-        />
+        <>
+          <Button onClick={()=>{
+            console.log(memberData);
+          }}>MemberCard</Button>
+          <Card
+            {...props}
+            {...memberData}
+            isMobile={isMobile}
+            level={level}
+            shape="line"
+            unit={t(Strings.people)}
+            trailColor={trailColor}
+            strokeColor={strokeColor}
+            title={t(Strings.current_count_of_person)}
+            titleTip={t(Strings.member_data_desc_of_member_number)}
+          />
+        </>
       ),
 
       ApiCard: (props: ICardProps) => (
